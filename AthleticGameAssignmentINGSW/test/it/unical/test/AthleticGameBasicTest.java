@@ -17,10 +17,16 @@ public class AthleticGameBasicTest {
 	public static void init() {
 		game = new AthleticGame("calcio");
 	}
-
+	
 	@Test
 	public void testAddArrival() {
 		game.addArrival("nicola", Instant.now());
+		assertEquals(1, game.getArrivals().size());
+	}
+	
+	@Test
+	public void testAddArrival2() {
+		game.addArrival("fabio", Instant.now());
 		assertEquals(1, game.getArrivals().size());
 	}
 
